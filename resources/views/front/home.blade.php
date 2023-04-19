@@ -1,4 +1,4 @@
-@extends('front.layout.master');
+@extends('front.layout.master')
 
 @section('content')
 
@@ -26,7 +26,7 @@
                     <p class="lead">Book a service at very affordable price, </p>
                 </div>
                 <div class="filter-header">
-                    <form id="sform" action="searchservices" method="post">                        
+                    <form id="sform" action="searchservices" method="post">
                         <input type="text" id="q" name="q" required="required" placeholder="What Services do you want?"
                             class="input-large typeahead" autocomplete="off">
                         <input type="submit" name="submit" value="Search">
