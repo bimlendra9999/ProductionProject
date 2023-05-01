@@ -18,18 +18,8 @@
                             <li><a href="{{asset('service-details/ac-repair.html')}}">Repair</a></li>
                         </ul>
                     </li>
-                    <li> <a href="#">Appliances</a>
-                        <ul class="drop-down one-column hover-fade">
-                            <li><a href="{{asset('servicesbycategory/11.html')}}">Computer Repair</a></li>
-                            <li><a href="{{asset('servicesbycategory/12.html')}}">TV</a></li>
-                            <li><a href="{{asset('servicesbycategory/1.html')}}">AC</a></li>
-                            <li><a href="{{asset('servicesbycategory/14.html')}}">Geyser</a></li>
-                            <li><a href="{{asset('servicesbycategory/21.html')}}">Washing Machine</a></li>
-                            <li><a href="{{asset('servicesbycategory/22.html')}}">Microwave Oven</a></li>
-                            <li><a href="{{asset('servicesbycategory/9.html')}}">Chimney and Hob</a></li>
-                            <li><a href="{{asset('servicesbycategory/10.html')}}">Water Purifier</a></li>
-                            <li><a href="{{asset('servicesbycategory/13.html')}}">Refrigerator</a></li>
-                        </ul>
+                    <li> <a href="{{route('service-category')}}">Appliances</a>
+
                     </li>
                     <li> <a href="#">Home Needs</a>
                         <ul class="drop-down one-column hover-fade">
