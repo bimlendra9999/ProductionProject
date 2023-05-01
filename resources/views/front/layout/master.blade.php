@@ -13,7 +13,7 @@
     <link href="{{asset('assets/css/theme-responsive.css')}}" rel="stylesheet" media="screen">
     <link href="{{asset('assets/css/dtb/jquery.dataTables.min.css')}}" rel="stylesheet" media="screen">
     <link href="{{asset('assets/css/select2.min.css')}}" rel="stylesheet" media="screen">
-    <link href="{{asset('assets/css/toastr.min.css')}}" rel="stylesheet" media="screen">        
+    <link href="{{asset('assets/css/toastr.min.css')}}" rel="stylesheet" media="screen">
     <script type="text/javascript" src="{{asset('assets/js/jquery.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/jquery-ui.1.10.4.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/toastr.min.js')}}"></script>
@@ -26,29 +26,28 @@
                 <div class="row">
                     <div class="col-md-6">
                         <ul class="visible-md visible-lg text-left">
-                            <li><a href="tel:+911234567890"><i class="fa fa-phone"></i> +91-1234567890</a></li>
+                            <li><a href="tel:+911234567890"><i class="fa fa-phone"></i> +97798989898</a></li>
                             <li><a href="mailto:contact@surfsidemedia.in"><i class="fa fa-envelope"></i>
-                                    contact@surfsidemedia.in</a></li>
+                                    contact@homesewa.com.np</a></li>
                         </ul>
                         <ul class="visible-xs visible-sm">
                             <li class="text-left"><a href="tel:+911234567890"><i class="fa fa-phone"></i>
-                                    +91-1234567890</a></li>
+                                    +98989898</a></li>
                             <li class="text-right"><a href="{{asset('index.php/changelocation.html')}}"><i
-                                        class="fa fa-map-marker"></i> Faridabad, Haryana</a></li>
+                                        class="fa fa-map-marker"></i>Nepal</a></li>
                         </ul>
                     </div>
                     <div class="col-md-6">
                         <ul class="visible-md visible-lg text-right">
                             <li><i class="fa fa-comment"></i> Live Chat</li>
-                            <li><a href="{{asset('index.php/changelocation.html')}}"><i class="fa fa-map-marker"></i> Faridabad,
-                                    Haryana</a></li>
+                            <li><a href="{{asset('index.php/changelocation.html')}}"><i class="fa fa-map-marker"></i>Kathmandu, Nepal</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
        @include('front.layout.header')
-       
+
        @yield('content')
 
        @include('front.layout.footer')

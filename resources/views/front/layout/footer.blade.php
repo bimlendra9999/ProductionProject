@@ -44,14 +44,14 @@
                         <h3>CONTACT US</h3>
                         <ul class="contact_footer">
                             <li class="location">
-                                <i class="fa fa-map-marker"></i> <a href="#"> Faridabad, Haryana, India</a>
+                                <i class="fa fa-map-marker"></i> <a href="#"> Kathmadu. Nepal</a>
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i> <a
-                                    href="{{asset('mailto:contact@surfsidemedia.in')}}">contact@surfsidemedia.in</a>
+                                    href="{{asset('mailto:contact@surfsidemedia.in')}}">contact@homesewa.com.np</a>
                             </li>
                             <li>
-                                <i class="fa fa-headphones"></i> <a href="tel:+911234567890">+91-1234567890</a>
+                                <i class="fa fa-headphones"></i> <a href="tel:+911234567890">+989898989</a>
                             </li>
                         </ul>
                         <h3 style="margin-top: 10px">FOLLOW US</h3>
@@ -67,14 +67,14 @@
                         <h3 class="mlist-h">CONTACT US</h3>
                         <ul class="contact_footer mlist">
                             <li class="location">
-                                <i class="fa fa-map-marker"></i> <a href="#"> Faridabad, Haryana, India</a>
+                                <i class="fa fa-map-marker"></i> <a href="#"> Kathmandu Nepal</a>
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i> <a
-                                    href="{{asset('mailto:contact@surfsidemedia.in')}}">contact@surfsidemedia.in</a>
+                                    href="{{asset('mailto:contact@surfsidemedia.in')}}">contact@</a>
                             </li>
                             <li>
-                                <i class="fa fa-phone"></i> <a href="tel:+911234567890">+91-1234567890</a>
+                                <i class="fa fa-phone"></i> <a href="tel:+911234567890">-1234567890</a>
                             </li>
                         </ul>
                         <ul class="social mlist-h">
@@ -101,6 +101,6 @@
                             <p class="text-xs-center crtext">&copy; 2021 SurfsideMedia. All Rights Reserved.</p>
                         </div>
                     </div>
-                </div>                
-            </div>            
+                </div>
+            </div>
         </footer>
