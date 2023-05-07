@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Sprovider\SproviderDashboardController;
 use App\Http\Controllers\Front\ServiceCategoryController;
 use App\Http\Controllers\Front\ServiceByCategoryController;
+use App\Http\Controllers\Front\ServiceDetailsController;
 
 
 /*
@@ -28,6 +29,7 @@ Route::get('/', [HomeController::class,'index'])->name('user.dashboard');
 // Route::get('/admin/dashboard', [DashboardController::class,'index']);
 Route::get('/service-category', [ServiceCategoryController::class, 'index'])->name('service-category');
 Route::get('/categories-service/{category_slug}', [ServiceByCategoryController::class, 'index']);
+Route::get('/service-detail/{service_slug}',[ServiceDetailsController::class, 'index']);
 
 
 
