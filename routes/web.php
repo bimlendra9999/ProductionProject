@@ -8,6 +8,7 @@ use App\Http\Controllers\Sprovider\SproviderDashboardController;
 use App\Http\Controllers\Front\ServiceCategoryController;
 use App\Http\Controllers\Front\ServiceByCategoryController;
 use App\Http\Controllers\Front\ServiceDetailsController;
+use App\Http\Controllers\Admin\CategoryController;
 
 
 /*
@@ -36,6 +37,7 @@ Route::get('/service-detail/{service_slug}',[ServiceDetailsController::class, 'i
 //Admin Dasboard
 Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class,'index']);
+    Route::resource('/categories', CategoryController::class);
 
 });
 
