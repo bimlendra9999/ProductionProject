@@ -59,8 +59,10 @@
             @endif
         </td>
         <td>
-            <form action="#" method="Post">
-                <a href="#"><i class="fa fa-edit fa-2x text-info"></i></a>
+            <form action="{{ route('categories.destroy',$scategory->id) }}" method="Post">
+                <a href="{{ route('categories.edit',$scategory->id) }}"><i class="fa fa-edit fa-2x text-info"></i></a>
+                @csrf
+                @method('DELETE')
                 <button type="submit" class="fa fa-times fa-2x text-danger"></button>
             </form>
         </td>
