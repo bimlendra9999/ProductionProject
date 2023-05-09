@@ -14,7 +14,10 @@
                         <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <li class="active">
-                        <a href="{{route('categories.index')}}"> <i class="menu-icon fa fa-dashboard"></i>Manage Category </a>
+                        <a href="{{route('categories.index')}}"> <i class="menu-icon fa fa-table"></i>Manage Category </a>
+                    </li>
+                    <li class="active">
+                        <a href="{{route('services.index')}}"> <i class="menu-icon fa fa-th"></i>Manage Service </a>
                     </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">

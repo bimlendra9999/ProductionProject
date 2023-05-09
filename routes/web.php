@@ -9,6 +9,7 @@ use App\Http\Controllers\Front\ServiceCategoryController;
 use App\Http\Controllers\Front\ServiceByCategoryController;
 use App\Http\Controllers\Front\ServiceDetailsController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ServiceController;
 
 
 /*
@@ -38,6 +39,7 @@ Route::get('/service-detail/{service_slug}',[ServiceDetailsController::class, 'i
 Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class,'index']);
     Route::resource('/categories', CategoryController::class);
+    Route::resource('/services', ServiceController::class);
 
 });
 
