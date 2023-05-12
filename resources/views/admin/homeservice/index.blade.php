@@ -1,3 +1,4 @@
+
 @extends('admin.layout.master')
 
 @section('content')
@@ -75,8 +76,10 @@
     <td>{{$service->category->name}}</td>
     <td>{{$service->created_at}}</td>
     <td>
-        <form action="#" method="Post">
-            <a href="#"><i class="fa fa-edit fa-2x text-info"></i></a>
+        <form action="{{ route('services.destroy',$service->id) }}" method="Post">
+            <a href="{{ route('services.edit',$service->id) }}"><i class="fa fa-edit fa-2x text-info"></i></a>
+            @csrf
+            @method('DELETE')
             <button type="submit" class="fa fa-times fa-2x text-danger"></button>
         </form>
     </td>

@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+
 use App\Models\Service;
 use App\Models\ServiceCategory;
 use Illuminate\Support\Carbon;
 
-class ServiceController extends Controller
+class HomeserviceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +18,7 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::orderBy('id','desc')->paginate(10);
-        return view('admin.service.index', compact('services'));
+        return view('admin.homeservice.index', compact('services'));
     }
 
     /**
@@ -26,7 +27,7 @@ class ServiceController extends Controller
     public function create()
     {
         $categories = ServiceCategory::all();
-        return view('admin.service.create', compact('categories'));
+        return view('admin.homeservice.create', compact('categories'));
     }
 
     /**
@@ -62,16 +63,16 @@ class ServiceController extends Controller
         $service->exclusion= str_replace("\n",'|',trim($request->exclusion));
 
         $thumbnailName = Carbon::now()->timestamp. '.' . $request->thumbnail->extension();
-        $request->thumbnail->move(public_path('services/thumbnails'), $thumbnailName);
+        $request->thumbnail->move(public_path('images/services/thumbnails'), $thumbnailName);
         $service->thumbnail = $thumbnailName;
 
         $imageName = Carbon::now()->timestamp. '.' . $request->image->extension();
-        $request->image->move(public_path('services'), $imageName);
+        $request->image->move(public_path('images/services'), $imageName);
         $service->image = $imageName;
 
         $service->save();
         return redirect()->route('services.index')
-        ->with('success','Service has been Inserted successfully.');
+        ->with('success','Service has been created successfully.');
     }
 
     /**
@@ -87,7 +88,9 @@ class ServiceController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $categories = ServiceCategory::all();
+        $services = Service::find($id);
+        return view('admin.homeservice.edit',compact('categories','services'));
     }
 
     /**
@@ -95,7 +98,44 @@ class ServiceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required',
+            'tagline' => 'required',
+            'service_category_id' => 'required',
+            'price' => 'required',
+            'discount' => 'required',
+            'discount_type' => 'required',
+            'image' => 'required|mimes:jpeg,png',
+            'thumbnail' => 'required|mimes:jpeg,png',
+            'description' => 'required',
+            'inclusion' => 'required',
+            'exclusion' => 'required',
+        ]);
+
+        $service = Service::find($id);
+        $service->name = $request->name;
+        $service->slug = $request->slug;
+        $service->tagline = $request->tagline;
+        $service->service_category_id = $request->service_category_id;
+        $service->price = $request->price;
+        $service->discount = $request->discount;
+        $service->discount_type = $request->discount_type;
+        $service->description = $request->description;
+        $service->inclusion= str_replace("\n",'|',trim($request->inclusion));
+        $service->exclusion= str_replace("\n",'|',trim($request->exclusion));
+
+        $thumbnailName = Carbon::now()->timestamp. '.' . $request->thumbnail->extension();
+        $request->thumbnail->move(public_path('images/services/thumbnails'), $thumbnailName);
+        $service->thumbnail = $thumbnailName;
+
+        $imageName = Carbon::now()->timestamp. '.' . $request->image->extension();
+        $request->image->move(public_path('images/services'), $imageName);
+        $service->image = $imageName;
+
+        $service->save();
+        return redirect()->route('services.index')
+        ->with('success','Service has been updated successfully.');
     }
 
     /**
@@ -103,6 +143,8 @@ class ServiceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $service = Service::find($id);
+        $service->delete();
+        return redirect()->route('services.index')->with('success','Service has been deleted successfully');
     }
 }

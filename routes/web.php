@@ -9,7 +9,7 @@ use App\Http\Controllers\Front\ServiceCategoryController;
 use App\Http\Controllers\Front\ServiceByCategoryController;
 use App\Http\Controllers\Front\ServiceDetailsController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\HomeserviceController;
 
 
 /*
@@ -39,7 +39,13 @@ Route::get('/service-detail/{service_slug}',[ServiceDetailsController::class, 'i
 Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class,'index']);
     Route::resource('/categories', CategoryController::class);
-    Route::resource('/services', ServiceController::class);
+    Route::get('/admin/services', [HomeserviceController::class, 'index'])->name('services.index');
+    Route::get('/admin/services/create', [HomeserviceController::class, 'create'])->name('services.create');
+    Route::post('/admin/services/store', [HomeserviceController::class, 'store'])->name('services.store');
+    Route::get('/admin/services/edit/{id}', [HomeserviceController::class, 'edit'])->name('services.edit');
+    Route::put('/admin/services/update/{id}', [HomeserviceController::class, 'update'])->name('services.update');
+    Route::delete('/admin/services/destroy/{id}', [HomeserviceController::class, 'destroy'])->name('services.destroy');
+
 
 });
 
