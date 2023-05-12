@@ -19,6 +19,12 @@
                     <li class="active">
                         <a href="{{route('services.index')}}"> <i class="menu-icon fa fa-th"></i>Manage Service </a>
                     </li>
+                    <li class="active">
+                        <a href="{{route('users.index')}}"> <i class="menu-icon fa fa-id-badge"></i>Users</a>
+                    </li>
+                    <li class="active">
+                        <a href="{{route('serviceproviders.index')}}"> <i class="menu-icon fa fa-id-badge"></i>Service Providers</a>
+                    </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
