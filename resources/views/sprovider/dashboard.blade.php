@@ -1,4 +1,4 @@
-@extends('admin.layout.master')
+@extends('sprovider.layout.master')
 
 @section('content')
 <div class="breadcrumbs">

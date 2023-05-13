@@ -4,7 +4,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
-    @include('admin.layout.top')
+    @include('sprovider.layout.top')
 
 </head>
 <body>
@@ -12,7 +12,7 @@
 
         <!-- Left Panel -->
 
-    @include('admin.layout.navigation')
+    @include('sprovider.layout.navigation')
 
     <!-- Left Panel -->
 
@@ -21,7 +21,7 @@
     <div id="right-panel" class="right-panel">
 
         <!-- Header-->
-        @include('admin.layout.header')
+        @include('sprovider.layout.header')
         <!-- Header-->
 
         @yield('content')
@@ -29,7 +29,7 @@
 
     <!-- Right Panel -->
 
-    @include('admin.layout.bottom')
+    @include('sprovider.layout.bottom')
 
 </body>
 </html>

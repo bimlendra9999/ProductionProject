@@ -15,7 +15,7 @@
                         <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <li class="active">
-                        <a href="#"> <i class="menu-icon fa fa-dashboard"></i>Manage Category </a>
+                        <a href="{{route('profiles.index')}}"> <i class="menu-icon fa fa-dashboard"></i>Profile Management</a>
                     </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">

@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\HomeserviceController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\ServiceProviderController;
+use App\Http\Controllers\Sprovider\SproviderProfileController;
 
 
 /*
@@ -60,6 +61,8 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
 //Sprovider Dashboard
 Route::middleware(['auth:sanctum','verified','authsprovider'])->group(function (){
     Route::get('/sprovider/dashboard', [SproviderDashboardController::class, 'index']);
+    Route::get('/sprovider/dashboard/profiles', [SproviderProfileController::class, 'index'])->name('profiles.index');
+    Route::get('/sprovider/dashboard/profiles/edit',[SproviderProfileController::class, 'edit'])->name('sprovider.edit_profile');
 });
 
 

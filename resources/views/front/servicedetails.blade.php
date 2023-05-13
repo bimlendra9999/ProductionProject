@@ -88,8 +88,12 @@
                                                     <td style="border-top: none;"><span>&#36;</span>{{$service->price}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Quntity</td>
-                                                    <td>1</td>
+                                                    <td>Category</td>
+                                                    <td>{{$service->category->name}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Service</td>
+                                                    <td>{{$service->name}}</td>
                                                 </tr>
                                                 @php
                                                     $total = $service->price;

@@ -63,7 +63,7 @@
                     @if(Route::has('login'))
                         @auth
                             @if(Auth::user()->utype==='ADM')
-                                <li class="login-form"> <a href="#" title="Register">My Account (Admin)</a>
+                                <li class="login-form"> <a href="#" title="Register">My Account ({{Auth::user()->name}})</a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="#">Dashboard</a></li>
                                         <li><a href="#">Service Category</a></li>
@@ -74,7 +74,7 @@
                                     </ul>
                                 </li>
                             @elseif(Auth::user()->utype==='SVP')
-                                <li class="login-form"> <a href="#" title="Register">My Account (S Provider)</a>
+                                <li class="login-form"> <a href="#" title="Register">My Account ({{Auth::user()->name}})</a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="#">Dashboard</a></li>
                                         <li><a href="#">Profile</a></li>
@@ -82,7 +82,7 @@
                                     </ul>
                                 </li>
                             @else
-                                <li class="login-form"> <a href="#" title="Register">My Account (Customer)</a>
+                                <li class="login-form"> <a href="#" title="Register">My Account ({{Auth::user()->name}})</a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="#">Dashboard</a></li>
                                         <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
