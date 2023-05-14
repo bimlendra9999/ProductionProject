@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\HomeserviceController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\ServiceProviderController;
 use App\Http\Controllers\Sprovider\SproviderProfileController;
+use App\Http\Controllers\Sprovider\ServiceController;
 
 
 /*
@@ -60,9 +61,17 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
 
 //Sprovider Dashboard
 Route::middleware(['auth:sanctum','verified','authsprovider'])->group(function (){
-    Route::get('/sprovider/dashboard', [SproviderDashboardController::class, 'index']);
+    Route::get('/sprovider/dashboard', [SproviderDashboardController::class, 'index'])->name('sprovider.dashboard');
     Route::get('/sprovider/dashboard/profiles', [SproviderProfileController::class, 'index'])->name('profiles.index');
     Route::get('/sprovider/dashboard/profiles/edit',[SproviderProfileController::class, 'edit'])->name('sprovider.edit_profile');
+    Route::put('//sprovider/dashboard/profiles/update/{id}', [SproviderProfileController::class, 'update'])->name('sprovider.update_profile');
+
+    Route::get('/sprovider/dashboard/services', [ServiceController::class, 'index'])->name('sproviderservices.index');
+    Route::get('/sprovider/services/create', [ServiceController::class, 'create'])->name('sproviderservices.create');
+    Route::post('/sprovider/services/store', [ServiceController::class, 'store'])->name('sproviderservices.store');
+    Route::get('/sprovider/services/edit/{id}', [ServiceController::class, 'edit'])->name('sproviderservices.edit');
+    Route::put('/sprovider/services/update/{id}', [ServiceController::class, 'update'])->name('sproviderservices.update');
+    Route::delete('/sprovider/services/destroy/{id}', [ServiceController::class, 'destroy'])->name('sproviderservices.destroy');
 });
 
 

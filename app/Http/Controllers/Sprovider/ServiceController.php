@@ -1,25 +1,25 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Sprovider;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
 
 use App\Models\Service;
 use App\Models\ServiceCategory;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
-class HomeserviceController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $services = Service::orderBy('id','desc')->paginate(10);
-        return view('admin.homeservice.index', compact('services'));
+        $sprovider = Auth::user()->id;
+        $services = Service::where('serviceprovider_id',$sprovider)->paginate(10);
+        return view('sprovider.service.index', compact('services'));
     }
 
     /**
@@ -28,7 +28,7 @@ class HomeserviceController extends Controller
     public function create()
     {
         $categories = ServiceCategory::all();
-        return view('admin.homeservice.create', compact('categories'));
+        return view('sprovider.service.create', compact('categories'));
     }
 
     /**
@@ -74,7 +74,7 @@ class HomeserviceController extends Controller
         $service->serviceprovider_id = Auth::user()->id;
 
         $service->save();
-        return redirect()->route('services.index')
+        return redirect()->route('sproviderservices.index')
         ->with('success','Service has been created successfully.');
     }
 
@@ -93,7 +93,7 @@ class HomeserviceController extends Controller
     {
         $categories = ServiceCategory::all();
         $services = Service::find($id);
-        return view('admin.homeservice.edit',compact('categories','services'));
+        return view('sprovider.service.edit',compact('categories','services'));
     }
 
     /**
@@ -137,7 +137,7 @@ class HomeserviceController extends Controller
         $service->image = $imageName;
 
         $service->save();
-        return redirect()->route('services.index')
+        return redirect()->route('sproviderservices.index')
         ->with('success','Service has been updated successfully.');
     }
 
@@ -148,6 +148,6 @@ class HomeserviceController extends Controller
     {
         $service = Service::find($id);
         $service->delete();
-        return redirect()->route('services.index')->with('success','Service has been deleted successfully');
+        return redirect()->route('sproviderservices.index')->with('success','Service has been deleted successfully');
     }
 }

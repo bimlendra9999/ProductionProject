@@ -29,26 +29,24 @@
                                 <div class="panel-body">
                                    <div class="row">
                                         <div class="col-md-12">
-                                            @if(Session::has('message'))
-                                                <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
-                                            @endif
-                                            <form class="form-horizontal" >
+                                        @if ($message = Session::get('success'))
+                                        <div class="alert alert-success">
+                                            <p>{{ $message }}</p>
+                                        </div>
+                                        @endif
+                                            <form action="{{route('sprovider.update_profile', $sprovider->id)}}" class="form-horizontal" method="post" enctype="multipart/form-data" >
+                                            @csrf
+                                            @method('PUT')
                                                 <div class="col-xs-12 col-sm-9">
-                                                <div class="form-group">
-                                                    <strong>Profile Image</strong>
-                                                        <input type="file" class="form-control-file" name="newimage"/>
-                                                        @if($sprovider->image)
-                                                            <img src="{{asset('images/sproviders')}}/{{$sprovider->image}}" width="100%" />
-                                                        @else
-                                                            <img src="{{asset('images/sproviders/dummyimage.jpg')}}" width="100%" />
-                                                        @endif
-                                                </div>
+                                                    <div class="form-group">
+                                                        <strong>Image</strong>
+                                                        <input type="file" class="form-control" name="image" id="image"/>
+                                                    </div>
                                                 </div>
                                                 <div class="col-xs-12 col-sm-9">
                                                     <div class="form-group">
                                                         <strong>About</strong>
                                                             <textarea class="form-control" name="about">{{$sprovider->about}}</textarea>
-                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-12 col-sm-9">
@@ -65,14 +63,12 @@
                                                                     <option value="{{$scategory->id}}" {{ $scategory->id == $sprovider->service_category_id ? 'selected' : '' }}>{{$scategory->name}}</option>
                                                                 @endforeach
                                                             </select>
-                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-12 col-sm-9">
                                                     <div class="form-group">
                                                         <strong>Service Location Zipcode/Pincode: </strong>
-                                                            <input type="text" class="form-control" name="service_locations" value="{{$sprovider->location}}"/>
-                                                        </div>
+                                                            <input type="text" class="form-control" name="service_locations" value="{{$sprovider->service_locations}}"/>
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-12 col-sm-9">
