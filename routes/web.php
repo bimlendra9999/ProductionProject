@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\ServiceProviderController;
 use App\Http\Controllers\Sprovider\SproviderProfileController;
 use App\Http\Controllers\Sprovider\ServiceController;
+use App\Http\Controllers\PaymentController;
 
 
 /*
@@ -36,6 +37,9 @@ Route::get('/', [HomeController::class,'index'])->name('user.dashboard');
 Route::get('/service-category', [ServiceCategoryController::class, 'index'])->name('service-category');
 Route::get('/categories-service/{category_slug}', [ServiceByCategoryController::class, 'index']);
 Route::get('/service-detail/{service_slug}',[ServiceDetailsController::class, 'index']);
+Route::post('/pay', [PaymentController::class, 'pay'])->name('payment');
+Route::get('/success', [PaymentController::class, 'success']);
+Route::get('/error', [PaymentController::class, 'error']);
 
 
 

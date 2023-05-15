@@ -120,17 +120,14 @@
                                             </table>
                                         </div>
                                         <div class="panel-footer">
-                                            <form action="#" method="POST" enctype="multipart/form-data">
+                                            <form action="{{route('payment')}}" method="POST">
                                                 @csrf
                                                 <div class="card-header bg-secondary border-0">
                                                     <h4 class="font-weight-semi-bold m-0">Payment</h4>
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="form-group">
-                                                        <div class="custom-control custom-radio">
-                                                            <input type="radio" class="custom-control-input" name="payment" id="paypal">
-                                                            <label class="custom-control-label" for="paypal">Paypal</label>
-                                                        </div>
+                                                        <input type="hidden" name="amount" value="{{$service->price}}">
                                                     </div>
                                                 </div>
                                                 <div class="card-footer border-secondary bg-transparent">
