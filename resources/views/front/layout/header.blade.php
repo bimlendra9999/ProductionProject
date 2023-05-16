@@ -5,7 +5,7 @@
 
                 <ul class="collapse">
                     <li class="title">
-                        <!-- <a href="{{asset('index.php.html')}}"><img src="{{asset('images/logo.png')}}"></a> -->
+                        <a href="{{asset('index.php.html')}}"><img src="{{asset('images/homesewalogo.png')}}" style="width:70px; height:80px;"></a>
                     </li>
                     <li> <a href="javascript:void(0);">Air Conditioners</a>
                         <ul class="drop-down one-column hover-fade">

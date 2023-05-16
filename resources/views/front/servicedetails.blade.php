@@ -127,7 +127,15 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="form-group">
-                                                        <input type="hidden" name="amount" value="{{$service->price}}">
+                                                        <input type="hidden" name="amount" value="{{$total}}">
+                                                        <input type="hidden" name="servicename" value="{{$service->name}}">
+                                                        <input type="hidden" name="sellerid" value="{{$service->serviceprovider_id}}">
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" class="custom-control-input" name="payment" id="paypal">
+                                                        <label class="custom-control-label" for="paypal">Paypal</label>
                                                     </div>
                                                 </div>
                                                 <div class="card-footer border-secondary bg-transparent">

@@ -8,7 +8,7 @@
 
                         <li data-transition="slidevertical" data-slotamount="1" data-masterspeed="1000"
                             data-saveperformance="off" data-title="Slide">
-                            <img src="#" alt="img" data-bgposition="center center"
+                            <img src="{{asset('assets/img/slide/1.jpg')}}" alt="img" data-bgposition="center center"
                                 data-kenburns="on" data-duration="6000" data-ease="Linear.easeNone" data-bgfit="130"
                                 data-bgfitend="100" data-bgpositionend="right center">
                         </li>

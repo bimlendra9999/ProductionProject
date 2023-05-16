@@ -60,7 +60,6 @@ class PaymentController extends Controller
                 $payment->amount = $arr['transactions'][0]['amount']['total'];
                 $payment->currency = env('PAYPAL_CURRENCY');
                 $payment->payment_status = $arr['state'];
-
                 $payment->save();
                 return "Payment is Successfull. Your Transaction id is : " . $arr['id'];
             }

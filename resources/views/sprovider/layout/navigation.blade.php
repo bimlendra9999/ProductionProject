@@ -2,7 +2,7 @@
         <nav class="navbar navbar-expand-sm navbar-default">
 
             <div class="navbar-header">
-                <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
+                <a class="navbar-brand" href="./"><img src="{{asset('images/homesewalogo.png')}}" alt="Logo" style="width:70px; height:80px;"></a>
                 <!-- <a class="navbar-brand hidden" href="./"><img src="{{asset('admin/images/logo2.png')}}" alt="Logo"></a> -->
             </div>
 

@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\ServiceProviderController;
 use App\Http\Controllers\Sprovider\SproviderProfileController;
 use App\Http\Controllers\Sprovider\ServiceController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\Admin\PaymentControllerData;
 
 
 /*
@@ -58,7 +59,8 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::resource('/users', CustomerController::class);
     Route::resource('/serviceproviders', ServiceProviderController::class);
 
-
+    Route::get('/admin/payments', [PaymentControllerData::class, 'index'])->name('payment.records');
+    Route::delete('admin/payment-records/{id}', [PaymentControllerData::class, 'destroy'])->name('payment.destroy');
 
 
 });

@@ -5,7 +5,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
+                <a class="navbar-brand" href="./"><img src="{{asset('images/homesewalogo.png')}}" alt="Logo" style="width:70px; height:80px;"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -25,6 +25,16 @@
                     <li class="active">
                         <a href="{{route('serviceproviders.index')}}"> <i class="menu-icon fa fa-id-badge"></i>Service Providers</a>
                     </li>
+                    <li class="active">
+                        <a href="{{route('payment.records')}}"> <i class="menu-icon fa fa-bars"></i>Payments</a>
+                    </li>
+                    <li class="active">
+                        <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> <i class="menu-icon menu-icon fa fa-sign-in"></i>Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
+
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>

@@ -35,7 +35,7 @@
             <div class="login-content">
                 <div class="login-logo">
                     <a href="index.html">
-                        <img class="align-content" src="{{ asset('admin/images/logo.png') }}" alt="">
+                        <img class="align-content" src="{{ asset('images/homesewalogo.png') }}" alt="" style="width:70px; height:80px;">
                     </a>
                 </div>
                 <div class="login-form">
