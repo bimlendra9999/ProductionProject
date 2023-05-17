@@ -29,7 +29,7 @@
                                    <div class="row">
                                         <div class="col-md-4">
                                             @if($sprovider->image)
-                                                <img src="{{asset('images/sproviders')}}/{{$sprovider->image}}" width="100%" />
+                                                <img src="{{asset('profiles')}}/{{$sprovider->image}}" width="100%" />
                                             @else
                                                 <img src="{{asset('images/sproviders/dummyimage.jpg')}}" width="100%" />
                                             @endif

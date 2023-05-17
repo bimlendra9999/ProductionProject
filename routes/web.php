@@ -16,6 +16,7 @@ use App\Http\Controllers\Sprovider\SproviderProfileController;
 use App\Http\Controllers\Sprovider\ServiceController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\Admin\PaymentControllerData;
+use App\Http\Controllers\Front\UserProfileController;
 
 
 /*
@@ -43,10 +44,15 @@ Route::get('/success', [PaymentController::class, 'success']);
 Route::get('/error', [PaymentController::class, 'error']);
 
 
+Route::get('/user-profile',[UserProfileController::class,'index'])->name('user.profile');
+Route::post('/user-profile',[UserProfileController::class,'profileUpdate'])->name('profileupdate');
+
+
+
 
 //Admin Dasboard
 Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
-    Route::get('/admin/dashboard', [DashboardController::class,'index']);
+    Route::get('/admin/dashboard', [DashboardController::class,'index'])->name('admin.dashboard');
     Route::resource('/categories', CategoryController::class);
 
     Route::get('/admin/services', [HomeserviceController::class, 'index'])->name('services.index');

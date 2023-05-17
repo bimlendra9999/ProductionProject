@@ -29,7 +29,7 @@ class SproviderProfileController extends Controller
 
 
         $imageName = Carbon::now()->timestamp. '.' . $request->image->extension();
-        $request->image->move(public_path('sproviders'), $imageName);
+        $request->image->move(public_path('profiles'), $imageName);
         $serviceprovider->image = $imageName;
 
 

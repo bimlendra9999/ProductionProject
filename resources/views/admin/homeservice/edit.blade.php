@@ -103,14 +103,21 @@
             <div class="form-group">
                 <strong>Thumbnail</strong>
                 <input type="file" class="form-control" name="thumbnail" id="thumbnail"/>
-                    @error('thumbnail') <p class="text-danger">{{$message}}</p> @enderror
+                @if($services->thumbnail)
+                    <img src="{{asset('images/services/thumbnails')}}/{{$services->thumbnail}}" width="20%" height="15%" />
+                @endif
+                @error('thumbnail') <p class="text-danger">{{$message}}</p> @enderror
             </div>
         </div>
         <div class="col-xs-12 col-sm-9">
             <div class="form-group">
                 <strong>Image</strong>
                 <input type="file" class="form-control" name="image" id="image"/>
-                    @error('image') <p class="text-danger">{{$message}}</p> @enderror
+                @if($services->image)
+                    <img src="{{asset('images/services')}}/{{$services->image}}" width="20%" height="15%" />
+                @endif
+
+                @error('image') <p class="text-danger">{{$message}}</p> @enderror
             </div>
         </div>
     </div>

@@ -46,6 +46,9 @@
         <div class="form-group">
         <strong>Category Image:</strong>
         <input type="file" class="input-file" name="image"/>
+        @if($scategory->image)
+            <img src="{{asset('images/categories')}}/{{$scategory->image}}" width="20%" height="15%" />
+        @endif
         @error('image')
         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
         @enderror
