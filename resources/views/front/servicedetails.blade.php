@@ -18,6 +18,13 @@
             </div>
         </div>
         <section class="content-central">
+            <br>
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <h3><strong>Transaction Completed Successfully</strong></h3>
+                    <p>{{ $message }}</p>
+                </div>
+            @endif
             <div class="semiboxshadow text-center">
             <img src="img/img-theme/shp.png" class="img-responsive" alt="">
             </div>
