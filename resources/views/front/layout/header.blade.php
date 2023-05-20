@@ -5,7 +5,7 @@
 
                 <ul class="collapse">
                     <li class="title">
-                        <a href="{{asset('index.php.html')}}"><img src="{{asset('images/homesewalogo.png')}}" style="width:70px; height:80px;"></a>
+                        <a href="/"><img src="{{asset('images/homesewalogo.png')}}" style="width:70px; height:80px;"></a>
                     </li>
                     <li> <a href="javascript:void(0);">Air Conditioners</a>
                         <ul class="drop-down one-column hover-fade">
@@ -85,6 +85,7 @@
                                 <li class="login-form"> <a href="#" title="Register">My Account ({{Auth::user()->name}})</a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{route('user.profile')}}">Profile Update</a></li>
+                                        <li><a href="{{route('user.changepassword')}}">Change Password</a></li>
                                         <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                     </ul>
                                 </li>

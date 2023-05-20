@@ -29,6 +29,9 @@
                         <a href="{{route('payment.records')}}"> <i class="menu-icon fa fa-bars"></i>Payments</a>
                     </li>
                     <li class="active">
+                        <a href="{{route('admin.changepassword')}}"> <i class="menu-icon  fa fa-paper-plane"></i>Change Password</a>
+                    </li>
+                    <li class="active">
                         <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> <i class="menu-icon menu-icon fa fa-sign-in"></i>Logout</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf

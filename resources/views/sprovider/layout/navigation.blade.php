@@ -17,6 +17,15 @@
                     <li class="active">
                         <a href="{{route('profiles.index')}}"> <i class="menu-icon fa fa-id-badge"></i>Profile Management</a>
                     </li>
+                    <li class="active">
+                        <a href="{{route('sprovider.changepassword')}}"> <i class="menu-icon fa fa-paper-plane"></i>Change Password</a>
+                    </li>
+                     <li class="active">
+                        <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> <i class="menu-icon menu-icon fa fa-sign-in"></i>Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>

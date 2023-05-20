@@ -17,6 +17,9 @@ use App\Http\Controllers\Sprovider\ServiceController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\Admin\PaymentControllerData;
 use App\Http\Controllers\Front\UserProfileController;
+use App\Http\Controllers\Sprovider\ChangePasswordController;
+use App\Http\Controllers\Admin\AdminChangePasswordController;
+use App\Http\Controllers\Front\UserChangePasswordController;
 
 
 /*
@@ -47,6 +50,9 @@ Route::get('/error', [PaymentController::class, 'error']);
 Route::get('/user-profile',[UserProfileController::class,'index'])->name('user.profile');
 Route::post('/user-profile',[UserProfileController::class,'profileUpdate'])->name('profileupdate');
 
+Route::get('/user/change-password', [UserChangePasswordController::class, 'changePassword'])->name('user.changepassword');
+Route::post('/user/change-password', [UserChangePasswordController::class, 'updatePassword'])->name('userupdate-password');
+
 
 
 
@@ -68,6 +74,8 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::get('/admin/payments', [PaymentControllerData::class, 'index'])->name('payment.records');
     Route::delete('admin/payment-records/{id}', [PaymentControllerData::class, 'destroy'])->name('payment.destroy');
 
+    Route::get('/admin/change-password', [AdminChangePasswordController::class, 'changePassword'])->name('admin.changepassword');
+    Route::post('/admin/change-password', [AdminChangePasswordController::class, 'updatePassword'])->name('adminupdate-password');
 
 });
 
@@ -84,6 +92,11 @@ Route::middleware(['auth:sanctum','verified','authsprovider'])->group(function (
     Route::get('/sprovider/services/edit/{id}', [ServiceController::class, 'edit'])->name('sproviderservices.edit');
     Route::put('/sprovider/services/update/{id}', [ServiceController::class, 'update'])->name('sproviderservices.update');
     Route::delete('/sprovider/services/destroy/{id}', [ServiceController::class, 'destroy'])->name('sproviderservices.destroy');
+
+    Route::get('/sprovider/change-password', [ChangePasswordController::class, 'changePassword'])->name('sprovider.changepassword');
+    Route::post('/sprovider/change-password', [ChangePasswordController::class, 'updatePassword'])->name('update-password');
+
+
 });
 
 
