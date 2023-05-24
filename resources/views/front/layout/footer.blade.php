@@ -1,4 +1,4 @@
-<footer id="footer" class="footer-v1">
+<footer id="footer" class="footer-v1" style="background-color:#152238; margin-top:180px;">
             <div class="container">
                 <div class="row visible-md visible-lg">
                     <div class="col-md-3 col-xs-6 col-sm-6">
@@ -44,7 +44,7 @@
                         <h3>CONTACT US</h3>
                         <ul class="contact_footer">
                             <li class="location">
-                                <i class="fa fa-map-marker"></i> <a href="#"> Kathmadu. Nepal</a>
+                                <i class="fa fa-map-marker"></i> <a href="#"> Kathmandu. Nepal</a>
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i> <a
@@ -90,8 +90,8 @@
                     <div class="row">
                         <div class="col-md-6">
                             <ul class="nav-footer">
-                                <li><a href="{{asset('about-us.html')}}">About Us</a> </li>
-                                <li><a href="{{asset('contact-us.html')}}">Contact Us</a></li>
+                                <li><a href="{{route('home.about')}}">About Us</a> </li>
+                                <li><a href="{{route('home.contact')}}">Contact Us</a></li>
                                 <li><a href="{{asset('faq.html')}}">FAQ</a></li>
                                 <li><a href="{{asset('terms-of-use.html')}}">Terms of Use</a></li>
                                 <li><a href="{{asset('privacy.html')}}">Privacy</a></li>

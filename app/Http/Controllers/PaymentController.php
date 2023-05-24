@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Omnipay\Omnipay;
 use App\Models\Payment;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
@@ -21,6 +22,10 @@ class PaymentController extends Controller
     //Handle PAyment Request
     public function pay(Request $request)
     {
+        if (!Auth::check()) {
+            // User is not logged in, redirect to the login page
+            return redirect()->route('login');
+        }
         try{
             $response = $this->gateway->purchase(array(
                 'amount' => $request->amount,

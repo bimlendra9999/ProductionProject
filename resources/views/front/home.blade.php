@@ -2,13 +2,13 @@
 
 @section('content')
 
-<section class="tp-banner-container">
+        <section class="tp-banner-container" style="height:340px;">
             <div class="tp-banner">
                 <ul>
 
                         <li data-transition="slidevertical" data-slotamount="1" data-masterspeed="1000"
                             data-saveperformance="off" data-title="Slide">
-                            <img src="{{asset('assets/img/slide/1.jpg')}}" alt="img" data-bgposition="center center"
+                            <img src="{{asset('assets/images/slider/1665069430.jpg')}}" alt="img" data-bgposition="center center"
                                 data-kenburns="on" data-duration="6000" data-ease="Linear.easeNone" data-bgfit="130"
                                 data-bgfitend="100" data-bgpositionend="right center">
                         </li>
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </section>
-        <section class="content-central">
+        <section class="content-central" style="margin-top:20px;">
             <div class="content_info content_resalt">
                 <div class="container" style="margin-top: 40px;">
                     <div class="row">
@@ -154,7 +154,47 @@
                     @endforeach
                 </div>
             </div>
+
+            <div class="content_info" style="background-color: #FC94AF">
+                <div class="paddings-mini">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <aside>
+                                    <address>
+                                        <strong>HomeSewa PVT LTD.</strong><br>
+                                        <i class="fa fa-map-marker"></i><strong>Address: </strong>Kathmandu, Nepal<br>
+                                        <i class="fa fa-phone"></i><strong>Phone: </strong> +9779898989898
+                                    </address>
+                                    <address>
+                                        <strong>HomeSewa Emails</strong><br>
+                                        <i class="fa fa-envelope"></i><strong>Email:</strong><a
+                                            href="mailto:contact@homesewa.com.np"> contact@homesewa.com.np</a><br>
+                                        <i class="fa fa-envelope"></i><strong>Email:</strong><a
+                                            href="mailto:support@homesewa.com.np"> support@homesewa.com.np</a>
+                                    </address>
+                                </aside>
+                                <hr class="tall">
+                            </div>
+                            <div class="col-md-8" style="background-color:white;">
+                                <h2 style="color:black"><span>Subscribe to our Newsletter<span></h2>
+                                <p class="lead">
+                                </p>
+                                <form id="contactform" class="form-theme" action="" method="post">
+                                    <input type="hidden" name="_token" value="2NHPrBqKScv73zvhqc7UbyDOvtsWZNm2dbOyAkqx">
+                                    <input type="text" placeholder="Name" name="name" id="name" required="">
+                                    <input type="email" placeholder="Email" name="email" id="email" required="">
+                                    <input type="submit" name="Submit" value="Subscribe Now" class="btn btn-primary">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
+
+
 
 @endsection
 

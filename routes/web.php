@@ -20,6 +20,8 @@ use App\Http\Controllers\Front\UserProfileController;
 use App\Http\Controllers\Sprovider\ChangePasswordController;
 use App\Http\Controllers\Admin\AdminChangePasswordController;
 use App\Http\Controllers\Front\UserChangePasswordController;
+use App\Http\Controllers\Front\AboutController;
+use App\Http\Controllers\Front\ContactController;
 
 
 /*
@@ -38,6 +40,8 @@ use App\Http\Controllers\Front\UserChangePasswordController;
 // });
 
 Route::get('/', [HomeController::class,'index'])->name('user.dashboard');
+Route::get('/about', [AboutController::class, 'index'])->name('home.about');
+Route::get('/contact', [ContactController::class, 'index'])->name('home.contact');
 // Route::get('/admin/dashboard', [DashboardController::class,'index']);
 Route::get('/service-category', [ServiceCategoryController::class, 'index'])->name('service-category');
 Route::get('/categories-service/{category_slug}', [ServiceByCategoryController::class, 'index']);

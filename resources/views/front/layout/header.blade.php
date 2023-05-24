@@ -14,10 +14,10 @@
                         <a href="{{route('service-category')}}">Service Category</a>
                     </li>
                     <li>
-                        <a href="#">About US</a>
+                        <a href="{{route('home.about')}}">About US</a>
                     </li>
                     <li>
-                        <a href="#">Contact Us</a>
+                        <a href="{{route('home.contact')}}">Contact Us</a>
                     </li>
                     <li>
                         <a href="#">Our Location</a>
