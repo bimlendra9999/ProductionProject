@@ -7,58 +7,20 @@
                     <li class="title">
                         <a href="/"><img src="{{asset('images/homesewalogo.png')}}" style="width:70px; height:80px;"></a>
                     </li>
-                    <li> <a href="javascript:void(0);">Air Conditioners</a>
-                        <ul class="drop-down one-column hover-fade">
-                            <li><a href="{{asset('service-details/ac-wet-servicing.html')}}">Wet Servicing</a></li>
-                            <li><a href="{{asset('service-details/ac-dry-servicing.html')}}">Dry Servicing</a></li>
-                            <li><a href="{{asset('service-details/ac-installation.html')}}">Installation</a></li>
-                            <li><a href="{{asset('service-details/ac-uninstallation.html')}}">Uninstallation</a></li>
-                            <li><a href="{{asset('service-details/ac-gas-top-up.html')}}">Gas Top Up</a></li>
-                            <li><a href="{{asset('service-details/ac-gas-refill.html')}}">Gas Refill</a></li>
-                            <li><a href="{{asset('service-details/ac-repair.html')}}">Repair</a></li>
-                        </ul>
+                    <li>
+                        <a href="/">Home</a>
                     </li>
-                    <li> <a href="{{route('service-category')}}">Appliances</a>
-
+                    <li>
+                        <a href="{{route('service-category')}}">Service Category</a>
                     </li>
-                    <li> <a href="#">Home Needs</a>
-                        <ul class="drop-down one-column hover-fade">
-                            <li><a href="{{asset('servicesbycategory/19.html')}}">Laundry</a></li>
-                            <li><a href="{{asset('servicesbycategory/4.html')}}">Electrical</a></li>
-                            <li><a href="{{asset('servicesbycategory/8.html')}}">Pest Control</a></li>
-                            <li><a href="{{asset('servicesbycategory/7.html')}}">Carpentry</a></li>
-                            <li><a href="{{asset('servicesbycategory/3.html')}}">Plumbing </a></li>
-                            <li><a href="{{asset('servicesbycategory/20.html')}}">Painting</a></li>
-                            <li><a href="{{asset('servicesbycategory/17.html')}}">Movers &amp; Packers</a></li>
-                            <li><a href="{{asset('servicesbycategory/5.html')}}">Shower Filters </a></li>
-                        </ul>
+                    <li>
+                        <a href="#">About US</a>
                     </li>
-                    <li> <a href="#">Home Cleaning</a>
-                        <ul class="drop-down one-column hover-fade">
-                            <li><a href="{{asset('service-details/bedroom-deep-cleaning.html')}}">Bedroom Deep Cleaning</a></li>
-                            <li><a href="{{asset('service-details/overhead-water-storage.html')}}">Overhead Water Storage </a></li>
-                            <li><a href="{{asset('/service-details/tank-cleaning')}}">Tank Cleaning</a></li>
-                            <li><a href="{{asset('service-details/underground-sump-cleaning.html')}}">Underground Sump Cleaning</a>
-                            </li>
-                            <li><a href="{{asset('service-details/dining-chair-shampooing.html')}}">Dining Chair Shampooing </a></li>
-                            <li><a href="{{asset('service-details/office-chair-shampooing.html')}}">Office Chair Shampooing</a></li>
-                            <li><a href="{{asset('service-details/home-deep-cleaning.html')}}">Home Deep Cleaning </a></li>
-                            <li><a href="{{asset('service-details/carpet-shampooing.html')}}">Carpet Shampooing </a></li>
-                            <li><a href="{{asset('service-details/fabric-sofa-shampooing.html')}}">Fabric Sofa Shampooing</a></li>
-                            <li><a href="{{asset('service-details/bathroom-deep-cleaning.html')}}">Bathroom Deep Cleaning</a></li>
-                            <li><a href="{{asset('service-details/floor-scrubbing-polishing.html')}}">Floor Scrubbing &amp; Polishing
-                                </a></li>
-                            <li><a href="{{asset('service-details/mattress-shampooing.html')}}">Mattress Shampooing </a></li>
-                            <li><a href="{{asset('service-details/kitchen-deep-cleaning.html')}}">Kitchen Deep Cleaning </a></li>
-                        </ul>
+                    <li>
+                        <a href="#">Contact Us</a>
                     </li>
-                    <li> <a href="#">Special Services</a>
-                        <ul class="drop-down one-column hover-fade">
-                            <li><a href="{{asset('servicesbycategory/16.html')}}">Document Services</a></li>
-                            <li><a href="{{asset('servicesbycategory/15.html')}}">Cars &amp; Bikes</a></li>
-                            <li><a href="{{asset('servicesbycategory/17.html')}}">Movers &amp; Packers </a></li>
-                            <li><a href="{{asset('servicesbycategory/18.html')}}">Home Automation</a></li>
-                        </ul>
+                    <li>
+                        <a href="#">Our Location</a>
                     </li>
                     @if(Route::has('login'))
                         @auth

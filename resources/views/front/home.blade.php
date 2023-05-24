@@ -80,7 +80,7 @@
                                             <p>{{$fservice->tagline}}</p>
                                             <div class="content-btn"><a href="{{ url('/service-detail/'.$fservice->slug)}}"
                                                     class="btn btn-primary">Book Now</a></div>
-                                            <div class="price"><span>&#36;</span><b>From</b>${{$fservice->price}}</div>
+                                            <div class="price"><span>&#36;</span><b>From</b>{{$fservice->price}}</div>
                                         </div>
                                     </a>
                                 </div>

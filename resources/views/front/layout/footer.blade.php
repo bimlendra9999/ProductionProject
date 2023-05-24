@@ -71,7 +71,7 @@
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i> <a
-                                    href="{{asset('mailto:contact@surfsidemedia.in')}}">contact@</a>
+                                    href="{{asset('mailto:contact@homesewa.com')}}">contact@</a>
                             </li>
                             <li>
                                 <i class="fa fa-phone"></i> <a href="tel:+911234567890">-1234567890</a>
@@ -98,7 +98,7 @@
                             </ul>
                         </div>
                         <div class="col-md-6">
-                            <p class="text-xs-center crtext">&copy; 2021 SurfsideMedia. All Rights Reserved.</p>
+                            <p class="text-xs-center crtext">&copy; 2023 HomeSewa. All Rights Reserved.</p>
                         </div>
                     </div>
                 </div>
