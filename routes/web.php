@@ -22,6 +22,8 @@ use App\Http\Controllers\Admin\AdminChangePasswordController;
 use App\Http\Controllers\Front\UserChangePasswordController;
 use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\ContactController;
+use App\Http\Controllers\Front\NewsletterController;
+use App\Http\Controllers\Admin\SubscriberController;
 
 
 /*
@@ -51,6 +53,7 @@ Route::get('/success', [PaymentController::class, 'success']);
 Route::get('/error', [PaymentController::class, 'error']);
 
 Route::get('/userservicesearch', [HomeController::class,'search']);
+Route::post('/newsletter', [NewsletterController::class,'store'])->name('newsletter');
 
 
 Route::get('/user-profile',[UserProfileController::class,'index'])->name('user.profile');
@@ -88,6 +91,9 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
 
     Route::get('/admin/change-password', [AdminChangePasswordController::class, 'changePassword'])->name('admin.changepassword');
     Route::post('/admin/change-password', [AdminChangePasswordController::class, 'updatePassword'])->name('adminupdate-password');
+
+    Route::get('admin/subscriber', [SubscriberController::class, 'index'])->name('subscription');
+    Route::delete('admin/subscriber/{id}',[SubscriberController::class, 'destroy'])->name('subscriber.destroy');
 
 });
 

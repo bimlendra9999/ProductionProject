@@ -177,12 +177,23 @@
                             </div>
                             <div class="col-md-8" style="background-color:white;">
                                 <h2 style="color:black"><span>Subscribe to our Newsletter<span></h2>
+                                @if ($message = Session::get('success'))
+                                    <div class="alert alert-success" role="alert">
+                                        <p>{{ $message }}</p>
+                                    </div>
+                                @endif
                                 <p class="lead">
                                 </p>
-                                <form id="contactform" class="form-theme" action="" method="post">
-                                    <input type="hidden" name="_token" value="2NHPrBqKScv73zvhqc7UbyDOvtsWZNm2dbOyAkqx">
-                                    <input type="text" placeholder="Name" name="name" id="name" required="">
-                                    <input type="email" placeholder="Email" name="email" id="email" required="">
+                                <form id="contactform" class="form-theme" action="{{route('newsletter')}}" method="post">
+                                    @csrf
+                                    <input type="text" placeholder="Name" name="name" id="name">
+                                    @error('name')
+                                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                                    @enderror
+                                    <input type="email" placeholder="Email" name="email" id="email">
+                                    @error('email')
+                                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                                    @enderror
                                     <input type="submit" name="Submit" value="Subscribe Now" class="btn btn-primary">
                                 </form>
                             </div>
