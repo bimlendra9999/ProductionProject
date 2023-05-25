@@ -14,6 +14,13 @@ class PaymentControllerData extends Controller
         return view('admin.payment.index', compact('payments'));
     }
 
+    public function search()
+    {
+        $search_text = $_GET['query'];
+        $payments = Payment::where('payer_id','LIKE','%'.$search_text.'%')->paginate(5);
+        return view('admin.payment.search',compact('payments'));
+    }
+
     public function destroy($id){
         $payment = Payment::find($id);
         $payment->delete();

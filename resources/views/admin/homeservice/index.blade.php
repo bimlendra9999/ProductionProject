@@ -6,8 +6,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>P roducts</title>
-<style>
+<title>Services</title>
+    <style>
         nav svg {
             height: 20px;
         }
@@ -32,6 +32,14 @@
 <div class="row">
 <div class="col-lg-12 margin-tb">
 <div><h4>Manage Services</h4></div>
+<div style="width:30%; margin-top:10px;">
+    <form type="get" action="{{url('/servicesearch')}}">
+        <div class="form-group">
+            <input type="search" name="query" class="form-control" placeholder="Search Service...">
+        </div>
+        <button class="btn btn-primary">Search</button>
+    </form>
+</div>
 <div class="pull-right mb-2">
 <a class="btn btn-success" href="{{route('services.create')}}"> Create Service</a>
 </div>

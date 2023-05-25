@@ -78,6 +78,13 @@ class HomeserviceController extends Controller
         ->with('success','Service has been created successfully.');
     }
 
+    public function search()
+    {
+        $search_text = $_GET['query'];
+        $services = Service::where('name','LIKE','%'.$search_text.'%')->paginate(5);
+        return view('admin.homeservice.search',compact('services'));
+    }
+
     /**
      * Display the specified resource.
      */

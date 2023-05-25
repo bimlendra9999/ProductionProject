@@ -86,6 +86,13 @@ class ServiceController extends Controller
         //
     }
 
+    public function search()
+    {
+        $search_text = $_GET['query'];
+        $services = Service::where('name','LIKE','%'.$search_text.'%')->paginate(5);
+        return view('sprovider.service.search',compact('services'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      */

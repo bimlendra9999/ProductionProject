@@ -22,9 +22,8 @@
                     <p class="lead">Book a service at very affordable price, </p>
                 </div>
                 <div class="filter-header">
-                    <form id="sform" action="#" method="GET">
-                        @csrf
-                        <input type="text" id="q" name="q" required="required" placeholder="What Services do you want?"
+                    <form id="sform" action="{{url('/userservicesearch')}}" method="GET">
+                        <input type="text" id="query" name="query" placeholder="What Services do you want?"
                             class="input-large typeahead" autocomplete="off">
                         <input type="submit" name="submit" value="Search">
                     </form>

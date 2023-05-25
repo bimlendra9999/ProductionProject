@@ -50,6 +50,8 @@ Route::post('/pay', [PaymentController::class, 'pay'])->name('payment');
 Route::get('/success', [PaymentController::class, 'success']);
 Route::get('/error', [PaymentController::class, 'error']);
 
+Route::get('/userservicesearch', [HomeController::class,'search']);
+
 
 Route::get('/user-profile',[UserProfileController::class,'index'])->name('user.profile');
 Route::post('/user-profile',[UserProfileController::class,'profileUpdate'])->name('profileupdate');
@@ -64,6 +66,7 @@ Route::post('/user/change-password', [UserChangePasswordController::class, 'upda
 Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class,'index'])->name('admin.dashboard');
     Route::resource('/categories', CategoryController::class);
+    Route::get('/categorysearch', [CategoryController::class,'search']);
 
     Route::get('/admin/services', [HomeserviceController::class, 'index'])->name('services.index');
     Route::get('/admin/services/create', [HomeserviceController::class, 'create'])->name('services.create');
@@ -71,12 +74,17 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::get('/admin/services/edit/{id}', [HomeserviceController::class, 'edit'])->name('services.edit');
     Route::put('/admin/services/update/{id}', [HomeserviceController::class, 'update'])->name('services.update');
     Route::delete('/admin/services/destroy/{id}', [HomeserviceController::class, 'destroy'])->name('services.destroy');
+    Route::get('/servicesearch', [HomeserviceController::class,'search']);
 
     Route::resource('/users', CustomerController::class);
+    Route::get('/usersearch', [CustomerController::class,'search']);
+
     Route::resource('/serviceproviders', ServiceProviderController::class);
+    Route::get('/serviceprovidersearch', [ServiceProviderController::class,'search']);
 
     Route::get('/admin/payments', [PaymentControllerData::class, 'index'])->name('payment.records');
     Route::delete('admin/payment-records/{id}', [PaymentControllerData::class, 'destroy'])->name('payment.destroy');
+    Route::get('/payersearch', [PaymentControllerData::class,'search']);
 
     Route::get('/admin/change-password', [AdminChangePasswordController::class, 'changePassword'])->name('admin.changepassword');
     Route::post('/admin/change-password', [AdminChangePasswordController::class, 'updatePassword'])->name('adminupdate-password');
@@ -96,6 +104,7 @@ Route::middleware(['auth:sanctum','verified','authsprovider'])->group(function (
     Route::get('/sprovider/services/edit/{id}', [ServiceController::class, 'edit'])->name('sproviderservices.edit');
     Route::put('/sprovider/services/update/{id}', [ServiceController::class, 'update'])->name('sproviderservices.update');
     Route::delete('/sprovider/services/destroy/{id}', [ServiceController::class, 'destroy'])->name('sproviderservices.destroy');
+    Route::get('/vendorservicesearch', [ServiceController::class,'search']);
 
     Route::get('/sprovider/change-password', [ChangePasswordController::class, 'changePassword'])->name('sprovider.changepassword');
     Route::post('/sprovider/change-password', [ChangePasswordController::class, 'updatePassword'])->name('update-password');

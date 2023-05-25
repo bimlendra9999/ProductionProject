@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Service Providers</title>
+<title>Users</title>
 <style>
         nav svg {
             height: 20px;
@@ -30,21 +30,16 @@
 <body>
 <div class="container mt-2">
 <div>
-    <h4>All Service Providers</h4>
+    <h4>Users Search Result</h4>
 </div>
 <div style="width:30%; margin-top:10px; margin-bottom:10px;">
-    <form type="get" action="{{url('/serviceprovidersearch')}}">
+    <form type="get" action="{{url('/usersearch')}}">
         <div class="form-group">
-            <input type="search" name="query" class="form-control" placeholder="Search ServiceProvider...">
+            <input type="search" name="query" class="form-control" placeholder="Search Users...">
         </div>
         <button class="btn btn-primary">Search</button>
     </form>
 </div>
-@if ($message = Session::get('success'))
-<div class="alert alert-primary" role="alert">
-    <p>{{ $message }}</p>
-</div>
-@endif
 <table class="table table-bordered">
 <tr>
 <th>S.No</th>
@@ -52,7 +47,6 @@
 <th>Email</th>
 <th>Phone</th>
 <th>User Registered</th>
-<th>Action</th>
 </tr>
 @foreach ($users as $user)
 <tr>
@@ -61,13 +55,6 @@
 <td>{{ $user->email }}</td>
 <td>{{ $user->phone }}</td>
 <td>{{ $user->created_at }}</td>
-<td>
-    <form action="{{ route('serviceproviders.destroy',$user->id) }}" method="Post">
-        @csrf
-        @method('DELETE')
-        <button type="submit" class="fa fa-times fa-2x text-danger"></button>
-    </form>
-</td>
 </tr>
 @endforeach
 </table>

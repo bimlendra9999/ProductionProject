@@ -34,6 +34,13 @@ class CustomerController extends Controller
         //
     }
 
+    public function search()
+    {
+        $search_text = $_GET['query'];
+        $users = User::where('name','LIKE','%'.$search_text.'%')->paginate(5);
+        return view('admin.customer.search',compact('users'));
+    }
+
     /**
      * Display the specified resource.
      */

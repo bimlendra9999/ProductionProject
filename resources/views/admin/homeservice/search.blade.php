@@ -1,13 +1,13 @@
 
-@extends('sprovider.layout.master')
+@extends('admin.layout.master')
 
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Products</title>
-<style>
+<title>Services</title>
+    <style>
         nav svg {
             height: 20px;
         }
@@ -31,24 +31,16 @@
 <div class="container mt-2">
 <div class="row">
 <div class="col-lg-12 margin-tb">
-<div><h4>Manage Services</h4></div>
-<div style="width:30%; margin-top:10px; margin-bottom:10px;">
-    <form type="get" action="{{url('/vendorservicesearch')}}">
+<div><h4>Services Search Result</h4></div>
+<div style="width:30%; margin-top:10px;">
+    <form type="get" action="{{url('/servicesearch')}}">
         <div class="form-group">
-            <input type="search" name="query" class="form-control" placeholder="Search Services...">
+            <input type="search" name="query" class="form-control" placeholder="Search Service...">
         </div>
         <button class="btn btn-primary">Search</button>
     </form>
 </div>
-<div class="pull-right mb-2">
-<a class="btn btn-success" href="{{route('sproviderservices.create')}}"> Create Service</a>
 </div>
-</div>
-@if ($message = Session::get('success'))
-<div class="alert alert-success">
-<p>{{ $message }}</p>
-</div>
-@endif
 <table class="table table-bordered">
 <tr>
     <th>#</th>
@@ -59,7 +51,6 @@
     <th>Featured</th>
     <th>Category</th>
     <th>Created At</th>
-    <th>Action</th>
 </tr>
 @foreach($services as $service)
 <tr>
@@ -83,14 +74,6 @@
     </td>
     <td>{{$service->category->name}}</td>
     <td>{{$service->created_at}}</td>
-    <td>
-        <form action="{{ route('sproviderservices.destroy',$service->id) }}" method="Post">
-            <a href="{{ route('sproviderservices.edit',$service->id) }}"><i class="fa fa-edit fa-2x text-info"></i></a>
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="fa fa-times fa-2x text-danger"></button>
-        </form>
-    </td>
 </tr>
 @endforeach
 </table>

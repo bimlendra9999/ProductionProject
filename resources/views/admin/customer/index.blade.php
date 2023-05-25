@@ -32,6 +32,14 @@
 <div>
     <h4>All Users</h4>
 </div>
+<div style="width:30%; margin-top:10px; margin-bottom:10px;">
+    <form type="get" action="{{url('/usersearch')}}">
+        <div class="form-group">
+            <input type="search" name="query" class="form-control" placeholder="Search Users...">
+        </div>
+        <button class="btn btn-primary">Search</button>
+    </form>
+</div>
 @if ($message = Session::get('success'))
 <div class="alert alert-primary" role="alert">
     <p>{{ $message }}</p>

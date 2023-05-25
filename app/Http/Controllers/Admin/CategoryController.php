@@ -51,6 +51,13 @@ class CategoryController extends Controller
 
     }
 
+    public function search()
+    {
+        $search_text = $_GET['query'];
+        $scategories = ServiceCategory::where('name','LIKE','%'.$search_text.'%')->paginate(5);
+        return view('admin.category.search',compact('scategories'));
+    }
+
     /**
      * Display the specified resource.
      */

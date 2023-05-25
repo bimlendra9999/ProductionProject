@@ -19,4 +19,11 @@ class HomeController extends Controller
         $aservices = Service::whereIn('service_category_id',$sid)->inRandomOrder()->take(8)->get();
         return view('front.home',compact('scategories','fservices','fscategories','aservices'));
     }
+
+    public function search()
+    {
+        $search_text = $_GET['query'];
+        $fservices = Service::where('name','LIKE','%'.$search_text.'%')->paginate(5);
+        return view('front.searchhomeservices',compact('fservices'));
+    }
 }

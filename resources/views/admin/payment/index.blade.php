@@ -32,6 +32,14 @@
 <div>
     <h4>All Payment Records</h4>
 </div>
+<div style="width:30%; margin-top:10px; margin-bottom:10px;">
+    <form type="get" action="{{url('/payersearch')}}">
+        <div class="form-group">
+            <input type="search" name="query" class="form-control" placeholder="Search PayerId...">
+        </div>
+        <button class="btn btn-primary">Search</button>
+    </form>
+</div>
 @if ($message = Session::get('success'))
 <div class="alert alert-primary" role="alert">
     <p>{{ $message }}</p>
