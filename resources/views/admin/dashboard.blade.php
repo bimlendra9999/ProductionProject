@@ -24,7 +24,7 @@
 
             <div class="col-sm-12">
                 <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                  <span class="badge badge-pill badge-success">Success</span> You successfully read this important alert message.
+                  <span class="badge badge-pill badge-success">Success</span> Welcome you to the admin dashboard.
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count">10</span>
                         </h4>
                         <p class="text-light">Service Booked</p>
 
@@ -78,7 +78,7 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count">40</span>
                         </h4>
                         <p class="text-light">New Customer</p>
 
@@ -107,7 +107,7 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count">10</span>
                         </h4>
                         <p class="text-light">Paypal Payments</p>
 
@@ -136,7 +136,7 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count">4</span>
                         </h4>
                         <p class="text-light">New SProvider</p>
 
@@ -157,7 +157,7 @@
                             <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Total Profit</div>
-                                <div class="stat-digit">1,012</div>
+                                <div class="stat-digit">18000</div>
                             </div>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                             <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Customer</div>
-                                <div class="stat-digit">961</div>
+                                <div class="stat-digit">100</div>
                             </div>
                         </div>
                     </div>
@@ -186,7 +186,7 @@
                             <div class="stat-icon dib"><i class="ti-layout-grid2 text-warning border-warning"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Service Category</div>
-                                <div class="stat-digit">20</div>
+                                <div class="stat-digit">15</div>
                             </div>
                         </div>
                     </div>
@@ -200,7 +200,7 @@
                             <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Service Provider</div>
-                                <div class="stat-digit">961</div>
+                                <div class="stat-digit">17</div>
                             </div>
                         </div>
                     </div>

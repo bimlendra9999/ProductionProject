@@ -67,7 +67,7 @@
                             <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Service Booked</div>
-                                <div class="stat-digit">961</div>
+                                <div class="stat-digit">4</div>
                             </div>
                         </div>
                     </div>

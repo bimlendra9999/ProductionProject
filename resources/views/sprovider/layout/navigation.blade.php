@@ -18,6 +18,9 @@
                         <a href="{{route('profiles.index')}}"> <i class="menu-icon fa fa-id-badge"></i>Profile Management</a>
                     </li>
                     <li class="active">
+                        <a href="#"> <i class="menu-icon fa fa-table"></i>Service Booked</a>
+                    </li>
+                    <li class="active">
                         <a href="{{route('sprovider.changepassword')}}"> <i class="menu-icon fa fa-paper-plane"></i>Change Password</a>
                     </li>
                      <li class="active">

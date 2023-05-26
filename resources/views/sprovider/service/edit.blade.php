@@ -4,7 +4,7 @@
 <div class="container mt-2">
     <div class="row">
         <div class="col-lg-12 margin-tb">
-        <h2>Add Service</h2>
+        <h2>Edit Service</h2>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('sproviderservices.index') }}"> Back</a>
             </div>
